@@ -1,2 +1,2 @@
 # POO24_TP1
-# Repositorio de Ejercicios para POO
+# Repositorio de Ejercicios en Java
