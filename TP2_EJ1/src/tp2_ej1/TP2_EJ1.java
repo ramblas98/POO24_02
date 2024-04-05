@@ -83,6 +83,7 @@ public class TP2_EJ1 {
         System.out.println();
         System.out.println("Resultado del COCIENTE:");
         System.out.println(Complejo.division(g, h));
+        System.out.println();
     }
     
 }
