@@ -74,10 +74,13 @@ public class TP2_EJ1 {
         
         System.out.println("Resultado de la SUMA:");
         System.out.println(Complejo.suma(g,h));
+        System.out.println();
         System.out.println("Resultado de la DIFERNECIA:");
         System.out.println(Complejo.resta(g, h));
+        System.out.println();
         System.out.println("Resultado del PRODUCTO:");
         System.out.println(Complejo.priducto(g, h));
+        System.out.println();
         System.out.println("Resultado del COCIENTE:");
         System.out.println(Complejo.division(g, h));
     }
