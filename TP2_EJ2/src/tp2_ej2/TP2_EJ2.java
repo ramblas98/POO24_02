@@ -6,7 +6,7 @@ package tp2_ej2;
 
 /**
  *
- * @author magal
+ * @author magali.17.reina@gmail.com
  */
 public class TP2_EJ2 {
 
@@ -14,7 +14,20 @@ public class TP2_EJ2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+            Fecha f = new Fecha();
+            //boolean band;
+            
+            /*f.setAnio(1992);
+            band = f.bisiesto(f.getAnio());
+            if(band == true) System.out.println("Anio bisiesto");
+            else System.out.println("Anio NO bisiesto");*/
+            
+            f.setDia(29);
+            f.setMes(2);
+            f.setAnio(2024);
+            f.imprimir();
+            f.adelantar(5);
+            f.imprimir();
     }
-    
+
 }
