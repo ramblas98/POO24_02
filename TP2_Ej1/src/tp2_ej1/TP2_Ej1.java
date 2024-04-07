@@ -15,6 +15,13 @@ public class TP2_Ej1 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Complejo c1 = new Complejo(3, 2);
+        Complejo c2 = new Complejo(1, -1);
+        
+        System.out.println("Suma:" + Complejo.suma(c1, c2).re + "+" + Complejo.suma(c1, c2).im + "i");
+        System.out.println("Resta: " + Complejo.resta(c1, c2).re + " + " + Complejo.resta(c1, c2).im + "i");
+        System.out.println("Producto: " + Complejo.producto(c1, c2).re + " + " + Complejo.producto(c1, c2).im + "i");
+        System.out.println("Division: " + Complejo.division(c1, c2).re + " + " + Complejo.division(c1, c2).im + "i");
     }
     
 }
