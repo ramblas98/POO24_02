@@ -34,7 +34,7 @@ public class Complejo {
         this.ima += a.ima;
     }
     public static Complejo suma(Complejo a, Complejo b){
-        Complejo c;
+        Complejo c = new Complejo();
         c.rea = a.rea + b.rea;
         c.ima = a.ima + b.ima;
         return c;
