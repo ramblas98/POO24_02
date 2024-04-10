@@ -15,7 +15,7 @@ public class TP2_EJ2 {
      */
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
-        int d;
+        int d,n,i,cont = 0;
         boolean bisi;
         Fecha a = new Fecha();
         
@@ -46,6 +46,30 @@ public class TP2_EJ2 {
         System.out.print("El anio es bisiesto:");
         bisi= Fecha.bisiesto(a.getAño());
         System.out.println(bisi);
+        
+        
+        System.out.println("*********************[TP06-B]***************************");
+        
+        
+        
+        
+        //___________________________TP06-B)____________________________________
+        
+        Fecha c = new Fecha();
+        Fecha aux;
+        System.out.println("Ingresar cantidad de fechas a cargar:");
+        n = teclado.nextInt();
+        for(i=0;i<n;i++){
+            c.iniciar();
+            aux = c;
+            c.normalizar(aux);
+            if(Fecha.bisiesto(c.getAño()) == true){
+                cont ++;
+            }
+            System.out.println();
+        }
+        
+        System.out.println("La cantidad de anio Bisiesto es: " + cont);
     }
 }
     
