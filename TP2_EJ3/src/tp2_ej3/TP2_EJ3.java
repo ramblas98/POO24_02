@@ -4,14 +4,11 @@
  */
 package tp2_ej3;
 
-/**
- *
- * @author Bruno
- */
 public class TP2_EJ3 {
 
     
     public static void main(String[] args) {
+        
     }
     
 }

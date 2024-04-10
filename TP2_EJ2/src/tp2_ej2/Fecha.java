@@ -31,6 +31,7 @@ public class Fecha {
    
    public void adelantar(int d){
        this.dia += d;
+       this.normalizar();
    }
    
    public void imprimir(){

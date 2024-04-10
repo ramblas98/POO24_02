@@ -4,10 +4,6 @@
  */
 package tp2_ej3;
 
-/**
- *
- * @author Bruno
- */
 public class ListaEnlazada {
     
 }

@@ -4,10 +4,6 @@
  */
 package tp2_ej5;
 
-/**
- *
- * @author Bruno
- */
 public class Estudiante {
     private String apellidos, nombres, email;
     private int lu, notaP1, notaP2, notaR,  asistencia;
