@@ -4,17 +4,15 @@
  */
 package tp2_ej2;
 
-/**
- *
- * @author profeblas
- */
-public class TP2_EJ2 {
 
-    /**
-     * @param args the command line arguments
-     */
+public class TP2_EJ2 {
+   
     public static void main(String[] args) {
-        // TODO code application logic here
+        Fecha a = new Fecha();
+        a.reiniciar(32,12,2024);
+        a.imprimir();
+        a.normalizar();
+        a.imprimir();
     }
     
 }
