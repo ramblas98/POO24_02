@@ -9,8 +9,9 @@ public class TP2_EJ2 {
    
     public static void main(String[] args) {
         Fecha a = new Fecha();
-        a.reiniciar(32,12,2024);
+        a.reiniciar(31,12,2024);
         a.imprimir();
+        a.adelantar(1);
         a.normalizar();
         a.imprimir();
     }
