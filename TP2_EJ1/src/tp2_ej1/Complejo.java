@@ -72,7 +72,9 @@ public class Complejo {
         modu = Math.sqrt(Math.pow(rea, 2)+Math.pow(ima, 2));
         return modu;        
     }
-    
+    public void conjugado(){
+        ima*=-1;
+    }
     public static Complejo suma(Complejo a, Complejo b){
         Complejo c = new Complejo();
         c.rea = a.rea + b.rea;
