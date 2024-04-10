@@ -15,6 +15,12 @@ public class TP2_Ej2 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-    }
-    
+        Fecha a = new Fecha();
+        a.setDia(21);
+        a.setMes(3);
+        a.setAnio(2024);
+        a.imprimir();
+        a.adelantar(4);
+        a.imprimir();
+    } 
 }
