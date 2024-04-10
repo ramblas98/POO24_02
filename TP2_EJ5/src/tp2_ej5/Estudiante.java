@@ -3,12 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package tp2_ej5;
-
+import java.util.Scanner;
 /**
  *
  * @author Luis Mendoza
  */
 public class Estudiante {
+    Scanner teclado = new Scanner(System.in);
     private String apellido,nombre,email;
     private int lu,notaP1,notaP2,notaR,asistencia;
     private boolean regular;
@@ -119,4 +120,29 @@ public class Estudiante {
     public void verificar() {
         if ((notaP1 >= 6 && notaP2 >= 6) || notaR >= 6) this.regular = true;
     }
+    
+    public void carga(){
+        System.out.println("Ingresar Apellido:");
+        this.apellido = teclado.next();
+        System.out.println("Ingresar Nombre:");
+        this.nombre = teclado.next();
+        System.out.println("Ingresar email:");
+        this.email = teclado.next();
+        System.out.println("Ingresar lu:");
+        this.lu = teclado.nextInt();
+        System.out.println("Ingresar notaP1:");
+        this.notaP1 = teclado.nextInt();
+        System.out.println("Ingresar notaP1:");
+        this.notaP2 = teclado.nextInt();
+        if(notaP1 < 6 && notaP2 < 6){
+            System.out.println("Ingresar notaR:");
+            this.notaR = teclado.nextInt();
+         }
+        System.out.println("Ingresar cantidad de asistencias:");
+        this.asistencia = teclado.nextInt();
+        
+        this.regular = false;
+    
+    }
+    
 }

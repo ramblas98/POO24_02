@@ -15,7 +15,7 @@ public class TP2_EJ5 {
      */
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
-        int c;
+        int c,cont=0,n,i;
         Estudiante a = new Estudiante("Mendoza","Luis","luismendoza4565@gmail.com",435,7,8,0,17,false);
         System.out.println("Ingresar cantidad de asistencias a sumar:");
         c= teclado.nextInt();
@@ -23,6 +23,25 @@ public class TP2_EJ5 {
         a.verificar();
         System.out.println(a);
         
+        
+        
+        System.out.println("*****************************************************");
+        //____________________________TP06-C)_______________________________________
+        
+        System.out.println("Ingresar cantidad de estudiantes:");
+        n = teclado.nextInt();
+        Estudiante b[] = new Estudiante[n];
+        Estudiante aux = new Estudiante();
+        for(i=0;i<n;i++){
+           aux.carga();
+           b[i]=aux;
+        }
+        for(i=0;i<n;i++){
+            b[i].verificar();
+            if(b[i].isRegular()==true){
+                cont++;
+            }
+        }
+        System.out.println("Cantidad de Estudiantes en instancia de Regular: " + cont);
     }
-    
 }
