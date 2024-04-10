@@ -4,10 +4,6 @@
  */
 package tp2_ej3;
 
-/**
- *
- * @author Bruno
- */
 public class Nodo {
     private int dato;
     private Nodo sgte;
@@ -18,13 +14,21 @@ public class Nodo {
     public Nodo GetSgte(){
         return sgte;
     }
+
+    public void setDato(int dato) {
+        this.dato = dato;
+    }
+
+    public void setSgte(Nodo sgte) {
+        this.sgte = sgte;
+    }
+    
     
     public boolean ultimo(Nodo desde){
         if (desde.sgte == null) {
             return true;
         } else return   false;
-    }
-        
+    }   
 
     public Nodo buscarUltimo(Nodo desde) {
         Nodo a = null;
@@ -53,6 +57,7 @@ public class Nodo {
         }
         return ant;
     }
+    
     public Nodo buscarUltimoMenor(int x) {
         Nodo ant = null;
         Nodo i = this;
@@ -62,6 +67,7 @@ public class Nodo {
         }
         return ant;
     }
+    
     public Nodo buscarUltimoMayor(int x) {
         Nodo ant = null;
         Nodo i = this;
