@@ -23,16 +23,21 @@ public class ListaEnlazada {
         return c;
     }
     public void agregarPrimero(int x){
-        this.primero.setDato(x);
-        this.primero.setSgte(null);
+        primero = new Nodo();
+        primero.setDato(x);
+        primero.setSgte(null);
     }
     public void agregarUltimo(int x){
-        Nodo ultimo = new Nodo();
-        ultimo.buscarUltimo(primero);
-        Nodo nuevo = new Nodo();
-        nuevo.setSgte(null);
-        nuevo.setDato(x);
-        ultimo.setSgte(nuevo);
+        if(!this.estaVacia()){
+            Nodo ultimo = new Nodo();
+            ultimo = ultimo.buscarUltimo(primero);
+            // ó Nodo ultimo = primero.buscarUltimo(primero); si anda
+            Nodo nuevo = new Nodo();
+            nuevo.setSgte(null);
+            nuevo.setDato(x);
+            ultimo.setSgte(nuevo);
+        }else this.agregarPrimero(x);
+            
     }
     public void agregarMayor(int x){
         if(this.estaVacia()){
@@ -41,18 +46,18 @@ public class ListaEnlazada {
             Nodo nuevo = new Nodo();
             nuevo.setDato(x);
             Nodo ultimo = new Nodo();
-            ultimo.buscarUltimo(primero);
-            if(primero.GetDato()>=x){
-                nuevo.setSgte(primero);
-                primero = nuevo;
+            ultimo = ultimo.buscarUltimo(primero);
+            if(this.primero.GetDato()>=x){
+                nuevo.setSgte(this.primero);
+                this.primero = nuevo;
             }else if(ultimo.GetDato()<=x){
                 nuevo.setSgte(null);
-                ultimo.setSgte(null);
+                ultimo.setSgte(nuevo);
             }else{
                 Nodo ant = new Nodo();
                 Nodo sgte = new Nodo();
-                ant.buscarUltimoMenor(x);
-                sgte.buscarUltimoMayor(x);
+                ant = ant.buscarUltimoMenor(primero, x);
+                sgte = sgte.buscarUltimoMayor(primero, x);
                 nuevo.setSgte(sgte);
                 ant.setSgte(nuevo);
             }
@@ -65,18 +70,18 @@ public class ListaEnlazada {
             Nodo nuevo = new Nodo();
             nuevo.setDato(x);
             Nodo ultimo = new Nodo();
-            ultimo.buscarUltimo(primero);
+            ultimo = ultimo.buscarUltimo(primero);
             if(primero.GetDato()<=x){
                 nuevo.setSgte(primero);
                 primero = nuevo;
             }else if(ultimo.GetDato()>=x){
                 nuevo.setSgte(null);
-                ultimo.setSgte(null);
+                ultimo.setSgte(nuevo);
             }else{
                 Nodo ant = new Nodo();
                 Nodo sgte = new Nodo();
-                ant.buscarUltimoMayor(x);
-                sgte.buscarUltimoMenor(x);
+                ant = ant.buscarUltimoMayor(primero, x);
+                sgte = sgte.buscarUltimoMenor(primero, x);
                 nuevo.setSgte(sgte);
                 ant.setSgte(nuevo);
             }
@@ -85,24 +90,41 @@ public class ListaEnlazada {
     public int eliminar(int x){
         int c=0;
         if(!this.estaVacia()){
-            Nodo eliminado = new Nodo(); Nodo ant = new Nodo(); Nodo sgte = new Nodo();
-            eliminado.buscarSiguiente(primero, x);
+            Nodo eliminado = new Nodo();
+            Nodo ultimo = new Nodo();
+            Nodo ant = new Nodo(); Nodo sig = new Nodo();
+            eliminado = eliminado.buscarSiguiente(primero, x);
             while(eliminado!=null){
+                
+                ultimo = ultimo.buscarUltimo(primero);
+                if(primero.GetDato()==x){
+                   
+                    primero = primero.GetSgte();
+                }else if(ultimo.GetDato()==x){
+                    //no funciona el contador porque buscar anterior devuelve el nodo anterior a x y se desvinculan los datos repetidos en adelante
+                    ant = ant.buscarAnterior(primero,x);
+                    //System.out.print("SIIII :"+ant.GetDato()+" ");
+                    ant.setSgte(null);
+                }else{
+                    
+                    ant = ant.buscarAnterior(primero, x);
+                    sig = sig.buscarSiguiente(sig, x);
+                    ant.setSgte(sig);
+                }
                 c++;
-                ant.buscarUltimoMenor(x);
-                sgte.buscarUltimoMayor(x);
-                ant.setSgte(sgte);
-                eliminado.buscarSiguiente(primero, x);
+                eliminado = eliminado.buscarSiguiente(primero, x);
             }
         }else System.out.println("Lista enlazada vacia");
         return c;
     }
+    
+    
     public void mostrar(){
         
         if(!this.estaVacia()){
             Nodo aux = primero;
             while(aux!=null){
-                System.out.println("["+aux.GetDato()+"]");
+                System.out.print("["+aux.GetDato()+"]");
                 aux = aux.GetSgte();
             }
         }else System.out.println("Lista enlazada vacia");
@@ -111,11 +133,11 @@ public class ListaEnlazada {
         int c=0;
         if(!this.estaVacia()){
             Nodo modificado = new Nodo(); Nodo ant = new Nodo(); Nodo sgte = new Nodo();
-            modificado.buscarSiguiente(primero, dActual);
+            modificado = modificado.buscarSiguiente(primero, dActual);
             while(modificado!=null){
                 c++;
                 modificado.setDato(dNuevo);
-                modificado.buscarSiguiente(primero, dActual);
+                modificado = modificado.buscarSiguiente(primero, dActual);
             }
         }else System.out.println("Lista enlazada vacia");
         return c;

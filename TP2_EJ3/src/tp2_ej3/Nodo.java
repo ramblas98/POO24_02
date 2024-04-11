@@ -7,7 +7,7 @@ package tp2_ej3;
 public class Nodo {
     private int dato;
     private Nodo sgte;
-
+    
     public int GetDato(){
         return dato;
     }
@@ -31,13 +31,13 @@ public class Nodo {
     }   
 
     public Nodo buscarUltimo(Nodo desde) {
-        Nodo a = null;
         Nodo aux = desde;
-        while (aux != null) {
-            a = aux;
+        Nodo an = null;
+        while (aux!= null ) {
+            an = aux;
             aux = aux.sgte;
         }
-        return a;
+        return an;
     }
 
     public Nodo buscarSiguiente(Nodo desde, int x) {
@@ -58,20 +58,20 @@ public class Nodo {
         return ant;
     }
     
-    public Nodo buscarUltimoMenor(int x) {
+    public Nodo buscarUltimoMenor(Nodo desde, int x) {
         Nodo ant = null;
-        Nodo i = this;
-        while (i.dato<=x && i != null) {
+        Nodo i = desde;
+        while (i != null && i.dato<=x) {
             ant = i;
             i = i.sgte;
         }
         return ant;
     }
     
-    public Nodo buscarUltimoMayor(int x) {
+    public Nodo buscarUltimoMayor(Nodo desde, int x ) {
         Nodo ant = null;
-        Nodo i = this;
-        while (i.dato<=x && i != null) {
+        Nodo i = desde;
+        while ( i != null && i.dato<=x) {
             i = i.sgte;
         }
         return i;
