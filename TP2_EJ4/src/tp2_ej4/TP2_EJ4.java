@@ -4,15 +4,8 @@
  */
 package tp2_ej4;
 import java.util.*;
-/**
- *
- * @author Bruno
- */
 public class TP2_EJ4 {
-
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String[] args) {
         Scanner leer = new Scanner(System.in);
         ListaEnlazada a = new ListaEnlazada();
