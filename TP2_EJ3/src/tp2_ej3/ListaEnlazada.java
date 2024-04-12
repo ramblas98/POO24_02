@@ -90,30 +90,29 @@ public class ListaEnlazada {
     public int eliminar(int x){
         int c=0;
         if(!this.estaVacia()){
-            Nodo eliminado = new Nodo();
+            
             Nodo ultimo = new Nodo();
-            Nodo ant = new Nodo(); Nodo sig = new Nodo();
-            eliminado = eliminado.buscarSiguiente(primero, x);
-            while(eliminado!=null){
-                
+            Nodo ant = new Nodo(); 
+            Nodo eliminado = new Nodo();
+            Nodo sig = new Nodo();
+            c=cantidadNodos();
+            boolean ban = primero.buscarSiguienteBol(primero, x);
+            while(ban==true){
+                eliminado = eliminado.buscarSiguiente(primero, x);
                 ultimo = ultimo.buscarUltimo(primero);
                 if(primero.GetDato()==x){
-                   
                     primero = primero.GetSgte();
                 }else if(ultimo.GetDato()==x){
-                    //no funciona el contador porque buscar anterior devuelve el nodo anterior a x y se desvinculan los datos repetidos en adelante
-                    ant = ant.buscarAnterior(primero,x);
-                    //System.out.print("SIIII :"+ant.GetDato()+" ");
+                    ant = ant.buscarNodoAnterior(primero, ultimo);
                     ant.setSgte(null);
                 }else{
-                    
-                    ant = ant.buscarAnterior(primero, x);
-                    sig = sig.buscarSiguiente(sig, x);
+                    ant = ant.buscarNodoAnterior(primero, eliminado);
+                    sig = eliminado.GetSgte();
                     ant.setSgte(sig);
                 }
-                c++;
-                eliminado = eliminado.buscarSiguiente(primero, x);
+                ban = primero.buscarSiguienteBol(primero, x);
             }
+            c-=cantidadNodos();
         }else System.out.println("Lista enlazada vacia");
         return c;
     }

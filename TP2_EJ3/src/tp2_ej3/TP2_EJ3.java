@@ -11,12 +11,14 @@ public class TP2_EJ3 {
         int s=0;
         ListaEnlazada a = new ListaEnlazada();
         System.out.print("lista con agregar mayor:");
-        a.agregarMayor(24);
+        a.agregarMayor(25);
         a.agregarMayor(5);
         a.agregarMayor(7);
         a.agregarMayor(3);
         a.agregarMayor(-2);
         a.agregarMayor(24);
+        a.agregarMayor(24);
+        
         a.mostrar();
         
         System.out.print("\nlista con agregar mayor despues de eliminar 24:");

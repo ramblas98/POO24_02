@@ -39,7 +39,6 @@ public class Nodo {
         }
         return an;
     }
-
     public Nodo buscarSiguiente(Nodo desde, int x) {
         Nodo aux = desde;
         while (aux != null && aux.dato != x) {
@@ -47,7 +46,26 @@ public class Nodo {
         }
         return aux;
     }
-
+    public boolean buscarSiguienteBol(Nodo desde, int x){
+        Nodo aux = desde;
+        while (aux != null && aux.dato != x) {
+            aux = aux.sgte;
+        }
+        if(aux==null) return false;
+        else return true;
+    }
+    public Nodo buscarNodoSiguiente(Nodo desde, Nodo x) {
+        Nodo aux = desde;
+        if(aux.sgte == x) return aux.sgte;
+        else{
+            while (aux != null && aux.sgte != x) {
+                aux = aux.sgte;
+            }
+        }  
+        return aux;
+    }
+    
+    
     public Nodo buscarAnterior(Nodo desde, int x) {
         Nodo aux = desde;
         Nodo ant = null;
@@ -56,6 +74,19 @@ public class Nodo {
             aux = aux.sgte;
         }
         return ant;
+    }
+    public Nodo buscarNodoAnterior(Nodo desde, Nodo x) {
+        Nodo aux = desde;
+        if(aux.sgte == x) return aux;
+        else{
+            while (aux != null && aux.sgte != x) {
+                aux = aux.sgte;
+            }
+        }  
+        if(aux==null){
+            System.out.print("noo");
+            return desde;
+        }else return aux;
     }
     
     public Nodo buscarUltimoMenor(Nodo desde, int x) {
