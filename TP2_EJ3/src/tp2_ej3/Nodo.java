@@ -54,17 +54,6 @@ public class Nodo {
         if(aux==null) return false;
         else return true;
     }
-    public Nodo buscarNodoSiguiente(Nodo desde, Nodo x) {
-        Nodo aux = desde;
-        if(aux.sgte == x) return aux.sgte;
-        else{
-            while (aux != null && aux.sgte != x) {
-                aux = aux.sgte;
-            }
-        }  
-        return aux;
-    }
-    
     
     public Nodo buscarAnterior(Nodo desde, int x) {
         Nodo aux = desde;
@@ -82,11 +71,8 @@ public class Nodo {
             while (aux != null && aux.sgte != x) {
                 aux = aux.sgte;
             }
-        }  
-        if(aux==null){
-            System.out.print("noo");
-            return desde;
-        }else return aux;
+        }
+        return aux;
     }
     
     public Nodo buscarUltimoMenor(Nodo desde, int x) {
