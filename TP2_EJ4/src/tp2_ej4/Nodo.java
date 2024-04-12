@@ -5,42 +5,57 @@
 package tp2_ej4;
 
 public class Nodo {
-    private int dato;
+    private Complejo dato;
     private Nodo sgte;
-
-    public int GetDato(){
+    
+    public Complejo GetDato(){
         return dato;
     }
     public Nodo GetSgte(){
         return sgte;
     }
+
+    public void setDato(Complejo dato) {
+        this.dato = dato;
+    }
+
+    public void setSgte(Nodo sgte) {
+        this.sgte = sgte;
+    }
+    
     
     public boolean ultimo(Nodo desde){
         if (desde.sgte == null) {
             return true;
         } else return   false;
-    }
-        
+    }   
 
     public Nodo buscarUltimo(Nodo desde) {
-        Nodo a = null;
         Nodo aux = desde;
-        while (aux != null) {
-            a = aux;
+        Nodo an = null;
+        while (aux!= null ) {
+            an = aux;
             aux = aux.sgte;
         }
-        return a;
+        return an;
     }
-
-    public Nodo buscarSiguiente(Nodo desde, int x) {
+    public Nodo buscarSiguiente(Nodo desde, Complejo x) {
         Nodo aux = desde;
         while (aux != null && aux.dato != x) {
             aux = aux.sgte;
         }
         return aux;
     }
-
-    public Nodo buscarAnterior(Nodo desde, int x) {
+    public boolean buscarSiguienteBol(Nodo desde, Complejo x){
+        Nodo aux = desde;
+        while (aux != null && aux.dato != x) {
+            aux = aux.sgte;
+        }
+        if(aux==null) return false;
+        else return true;
+    }
+    
+    public Nodo buscarAnterior(Nodo desde, Complejo x) {
         Nodo aux = desde;
         Nodo ant = null;
         while (aux != null && aux.dato != x) {
@@ -49,23 +64,33 @@ public class Nodo {
         }
         return ant;
     }
-    public Nodo buscarUltimoMenor(int x) {
+    public Nodo buscarNodoAnterior(Nodo desde, Nodo x) {
+        Nodo aux = desde;
+        if(aux.sgte == x) return aux;
+        else{
+            while (aux != null && aux.sgte != x) {
+                aux = aux.sgte;
+            }
+        }
+        return aux;
+    }
+    
+    public Nodo buscarUltimoMenor(Nodo desde, Complejo x) {
         Nodo ant = null;
-        Nodo i = this;
-        while (i.dato<=x && i != null) {
+        Nodo i = desde;
+        while (i != null && i.dato.modulo()<=x.modulo()) {
             ant = i;
             i = i.sgte;
         }
         return ant;
     }
-    public Nodo buscarUltimoMayor(int x) {
+    
+    public Nodo buscarUltimoMayor(Nodo desde, Complejo x ) {
         Nodo ant = null;
-        Nodo i = this;
-        while (i.dato<=x && i != null) {
+        Nodo i = desde;
+        while ( i != null && i.dato.modulo()<=x.modulo()) {
             i = i.sgte;
         }
         return i;
     }
-    
 }
-

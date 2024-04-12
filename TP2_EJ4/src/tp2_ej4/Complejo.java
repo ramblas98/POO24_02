@@ -108,7 +108,7 @@ public class Complejo {
     
     @Override
     public String toString(){
-        return "Complejo{" + "rea= " + rea + ", ima= " + ima + '}';
+        return "[" + "rea= " + rea + ", ima= " + ima + ']';
     }
     
 }
