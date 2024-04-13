@@ -60,7 +60,7 @@ public class TP2_EJ6 {
         String ape, nom;
         do {
             j++;
-            Estudiante a = new Estudiante((char) (w + j) + " ", (char) (k + j) + " ", (int) Math.random() * 100, (char) (w + j) + "@gmail.com");
+            Estudiante a = new Estudiante((char) (w + j)+" ", (char) (k + j)+" ", (int) Math.random() * 100, (char) (w + j)+" "+"@gmail.com");
             a.setNotaP1((int) (Math.random() * 10));
             a.setNotaP2((int) (Math.random() * 10));
 

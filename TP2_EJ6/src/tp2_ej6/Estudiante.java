@@ -5,8 +5,9 @@
 package tp2_ej6;
 
 public class Estudiante {
+
     private String apellidos, nombres, email;
-    private int lu, notaP1, notaP2, notaR,  asistencia;
+    private int lu, notaP1, notaP2, notaR, asistencia;
     private boolean regular;
 
     public Estudiante() {
@@ -60,7 +61,7 @@ public class Estudiante {
     public boolean isRegular() {
         return regular;
     }
-    
+
     public void setApellidos(String apellidos) {
         this.apellidos = apellidos;
 
@@ -101,7 +102,9 @@ public class Estudiante {
     }
 
     private void verificar() {
-        if ((notaP1 >= 6 && notaP2 >= 6) || notaR >= 6) this.regular = true;
+        if ((notaP1 >= 6 && notaP2 >= 6) || notaR >= 6) {
+            this.regular = true;
+        }
     }
 
     @Override

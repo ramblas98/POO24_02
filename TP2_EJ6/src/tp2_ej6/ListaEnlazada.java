@@ -4,7 +4,6 @@
  */
 package tp2_ej6;
 
-
 public class ListaEnlazada {
 
     private Nodo primero;
