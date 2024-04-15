@@ -21,11 +21,11 @@ public class Persona {
         return nombre;
     }
     
-    public String getApellido(){
+    public String GetApellido(){
         return apellido;
     }
     
-    public int getDni(){
+    public int GetDni(){
         return dni;
     }
     public void setNombre(String nombre){
