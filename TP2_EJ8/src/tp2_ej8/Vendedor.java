@@ -105,5 +105,15 @@ public class Vendedor {
         }
         this.comision = com;
     }
-    
-}
+
+    public void mostrar(){
+        int i;
+        System.out.println("Vendedor: "+dato);
+        System.out.println("Legajo: "+legajo);
+        System.out.println("Zona de venta: "+zonDeVenta);
+        for (i = 1; i <= 12; i++) {
+             System.out.println("Mes:"+i+" $"+ventasMes[i]);
+        }
+        System.out.println("Total anual: $",this.TotalAnual());
+        System.out.println("Comision : $",this.Comision());
+    }
