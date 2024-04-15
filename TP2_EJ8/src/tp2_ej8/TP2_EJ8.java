@@ -72,9 +72,9 @@ public class TP2_EJ8 {
         System.out.println("Comision de Mario (0.2%): $"+Mario.getComision());
         System.out.println("Comision de Franco: (0.3%): $"+Franco.getComision());
         
+        Franco.mostrar(); 
         Nico.mostrar();
-        
-        Franco.mostrar();    
+        Mario.mostrar();   
     }
 
 }
