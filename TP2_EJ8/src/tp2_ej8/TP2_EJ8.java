@@ -4,7 +4,6 @@ package tp2_ej8;
 public class TP2_EJ8 {
 
     public static void main(String[] args) {
-        double comi;
         double t;
         Persona nico = new Persona("Nicolas", "Monteagudo", 45019904);
         Persona fran = new Persona("Franco", "Lugo", 44015609);
@@ -14,7 +13,7 @@ public class TP2_EJ8 {
         Vendedor Franco = new Vendedor(fran, "Colonia", 4401);
         Vendedor Mario = new Vendedor(mario, "Picha", 4505);
         
-        Nico.nuevoVendedor(nico, "oran", 4501);
+        Nico.nuevoVendedor(nico, "Oran", 4501);
         Nico.VentasMes(1, 7542.10);
         Nico.VentasMes(2, 1);
         Nico.VentasMes(3, 1);
@@ -29,6 +28,7 @@ public class TP2_EJ8 {
         t = Nico.totalAnual();
         System.out.print("Total anual conseguido por Nico: $"+t);
         System.out.println();
+
         Nico.VentasMes(12, 8376.87);
         System.out.println("Total anual conseguido por Nico: $"+Nico.totalAnual());
         System.out.println();
@@ -71,6 +71,10 @@ public class TP2_EJ8 {
         System.out.println("Comision de Nico (0.15%): $"+Nico.getComision());
         System.out.println("Comision de Mario (0.2%): $"+Mario.getComision());
         System.out.println("Comision de Franco: (0.3%): $"+Franco.getComision());
+        
+        Nico.mostrar();
+        
+        Franco.mostrar();    
     }
 
 }

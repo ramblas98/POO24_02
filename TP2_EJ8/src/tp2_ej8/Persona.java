@@ -7,9 +7,7 @@ package tp2_ej8;
 public class Persona {
     private String nombre, apellido;
     private int dni;
-    public Persona(){
-        
-    }
+    
     public Persona(){
     }
     public Persona(String nombre,String apellido, int dni){
@@ -17,7 +15,8 @@ public class Persona {
         this.apellido = apellido;
         this.dni = dni;
     }
-    public String getNombre(){
+    /* 
+    public String GetNombre(){
         return nombre;
     }
     
@@ -27,9 +26,9 @@ public class Persona {
     
     public int GetDni(){
         return dni;
-    }
+    }*/
     public void setNombre(String nombre){
-        this.nombre = nombres;
+        this.nombre = nombre;
     }
     public void setApellido(String ape){
         this.apellido = ape;
@@ -39,6 +38,6 @@ public class Persona {
     }
     @Override
     public String toString() {
-        return "Persona{" + "nombre=" + nombre + ", apellido=" + apellido + ", dni=" + dni + '}';
+        return "Persona {" + "nombre:" + nombre + ", apellido:" + apellido + ", DNI:" + dni + '}';
     }
 }
