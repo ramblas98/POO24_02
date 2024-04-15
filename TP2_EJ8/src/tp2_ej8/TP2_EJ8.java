@@ -28,7 +28,7 @@ public class TP2_EJ8 {
         Nico.VentasMes(11, 6912.47);
         t = Nico.totalAnual();
         System.out.print("Total anual conseguido por Nico: $"+t);
-        
+        System.out.println();
         Nico.VentasMes(12, 8376.87);
         System.out.println("Total anual conseguido por Nico: $"+Nico.totalAnual());
         System.out.println();
@@ -68,9 +68,9 @@ public class TP2_EJ8 {
         Nico.Comision();
         Franco.Comision();
         System.out.println();
-        System.out.println("Comision de Nico : "+100*Nico.getComision()+"%");
-        System.out.println("Comision de Mario: "+100*Mario.getComision()+"%");
-        System.out.println("Comision de Franco: "+100*Franco.getComision()+"%");
+        System.out.println("Comision de Nico (0.15%): $"+Nico.getComision());
+        System.out.println("Comision de Mario (0.2%): $"+Mario.getComision());
+        System.out.println("Comision de Franco: (0.3%): $"+Franco.getComision());
     }
 
 }
