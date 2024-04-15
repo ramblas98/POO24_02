@@ -97,11 +97,11 @@ public class Vendedor {
         if (t < 50000 && t >= 0) {
             com = 0;
         } else if (t >= 50000 && t < 75000) {
-            com = 0.15;
+            com = 0.15*t;
         } else if (t >= 75000 && t <= 100000) {
-            com = 0.2;
+            com = 0.2*t;
         } else {
-            com = 0.3;
+            com = 0.3*t;
         }
         this.comision = com;
     }
