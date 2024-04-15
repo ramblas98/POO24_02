@@ -1,0 +1,1 @@
+public enum Especialidad {familia, traumatología, pediatría, internista, otorrino};
