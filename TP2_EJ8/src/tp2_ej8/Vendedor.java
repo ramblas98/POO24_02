@@ -117,7 +117,9 @@ public class Vendedor {
         for (i = 1; i <= 12; i++) {
             System.out.println("Mes:"+i+" $"+ventasMes[i]);
         }
-        //System.out.println("Total anual: $",this.TotalAnual());
-        //System.out.println("Comision : $",this.Comision());
+        this.Comision();
+        System.out.println("Total anual: $"+this.totalAnual());
+        System.out.println("Comision : $"+this.getComision());
+        System.out.println();
     }
 }

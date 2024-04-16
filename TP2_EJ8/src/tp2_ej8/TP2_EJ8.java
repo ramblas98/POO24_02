@@ -108,6 +108,9 @@ public class TP2_EJ8 {
         System.out.println();
         
         Luis.mostrar();
+        Franco.mostrar(); 
+        Nico.mostrar();
+        Mario.mostrar(); 
     }
 }
     
